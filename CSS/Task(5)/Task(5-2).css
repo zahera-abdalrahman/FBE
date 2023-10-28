@@ -1,0 +1,35 @@
+body{
+    background-color: #fffece
+    ;
+}
+
+div{
+    border: 1px solid;
+    width: 75%;
+    margin-bottom: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+.border-red{
+    border: 3px dotted red;
+}
+
+.border-red h2{
+    color: red;
+}
+
+.border-red p{
+    color: red;
+    border: 3px dotted red;
+}
+
+.ipsum{
+    background-color: #fccb96;
+}
+
+.quis{
+    background-color: #ffff9a
+    ;
+}

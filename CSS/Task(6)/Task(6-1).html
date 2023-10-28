@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: grid;
+            grid-template-rows: 100vh;
+            grid-template-columns: 50% 50%;
+        }
+        .container div{
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+        }
+        .first{
+            background-color: #fea500;
+
+        }
+        .second{
+            background-color: #0000fe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first">First Part</div>
+        <div class="second">Second Part</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task(3-2)</title>
+    <style>
+        body{
+        background: linear-gradient(to right, #8500cd, #b600c4);
+        padding: 0;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+    }
+    .container{
+        background-color: white;
+        display: flex;         
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        height: 600px;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 20px;
+    }
+    form .text-block{
+        margin: 10px 0;;
+        border-style: none;
+        border-radius: 30px;
+        height: 20px;
+        width: 90%;
+        height: 50px;
+        background-color: #e5e5e5;
+    }
+
+    .btn{
+        width: 90%;
+        margin: 30px auto;
+        border-style: none;
+        background-color: #1fcc44;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+        font-size: 20px;
+    }
+    h1{
+        font-size: 20px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }  
+    p,h1{
+        text-align: center;
+    }
+    span,.green{
+        color: #1fcc44;
+    }
+    
+    @media (max-width: 576px) {
+        .container{
+        flex-direction: column;
+        height: 1000px;
+        justify-content:center;
+    }
+    img{
+        width: 300px;
+    }
+    }
+    @media (max-width: 768px) {
+        .container{
+        flex-direction: column;
+        height: 800px;
+        width: 80%;
+    }
+
+    }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-image">
+                <img src="../images/laptop.png">
+            </div>
+            <div class="container-form">
+                <h1>Member Login</h1>
+            <form class="inputContainer">
+                
+                    <input type="email" class="text-block" placeholder="Email">
+                    <input type="password" class="text-block" placeholder="password">
+            </form>
+                    <button class="btn">Login</button>
+                    <p>Forget <span>Username/Password?</span></p>
+                    <p class="green">Create your Account</p>                
+            </div>
+        </div>
+</body>
+</html>

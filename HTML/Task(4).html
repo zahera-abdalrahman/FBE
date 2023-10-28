@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fill in your information</h1>
+    <form>
+        <label for="firstName">First name:</label>
+        <br>
+        <input type="text" id="firstName">
+        <br>
+        <label for="lastName">Last name:</label>
+        <br>
+        <input type="text" id="lastName">
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email">
+        <!--radio button-->
+        <h3>Your Gender</h3>       
+        <input type="radio" id="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female">
+        <label for="female">Female</label>
+
+        <!--Checkbox-->
+        <h3>Favorite Subjects</h3>
+        <input type="checkbox" id="c++">
+        <label for="c++">C++</label>
+        <input type="checkbox" id="java">
+        <label for="java">Java</label>
+        <input type="checkbox" id="c#">
+        <label for="c#">C#</label>
+        <input type="checkbox" id="php">
+        <label for="php">PHP</label>
+        <input type="checkbox" id="sql">
+        <label for="sql">SQL</label>
+
+        <h3>Your City</h3>
+        <label for="city">City:</label>
+        <select id="city" name="city">
+            <option>Amman</option>
+            <option>Zarqa</option>
+            <option>Irbid</option>
+            <option>Aqaba</option>
+        </select>
+
+        <p>Write About yourself:</p>
+        <textarea placeholder="Write Here" rows="10" cols="50"></textarea>
+        <br>
+        <input type="button" value="Submit">
+    </form>
+
+    <form>
+        <br>
+        <table>
+            <tr>
+                <td> <label for="name">Name:</label></td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address:</label></td>
+                <td><input type="text" id="address"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" id="Name"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td><input type="text" id="state"></td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip:</label></td>
+                <td><input type="text" id="zip"></td>
+            </tr>
+            <tr>
+                <td><label for="magazine">Magazine:</label></td>
+                <td> 
+                    <select id="magazine" name="magazine">
+                    <option>NewsWeek</option>
+                    <option>Time</option>
+                    <option>National Geographic</option>
+                    <option>Seventeen</option>
+                </select>
+            </td>
+            </tr>
+
+        </table>
+        <label for="male">Subscription:</label>
+        <input type="radio" id="1year" checked>
+        <label for="1year" checked>1 year</label>
+        <input type="radio" id="2years">
+        <label for="2years">2 years</label>
+
+        <br>
+        <input type="button" value="Send your order">
+    </form>
+</body>
+</html>

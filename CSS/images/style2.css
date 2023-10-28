@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(213, 213, 213, 0.63);
+    padding: 10px;
+}
+.nav-left{
+    margin-left: 5px;
+    font-weight: bold;
+    color: rgb(89, 89, 89);
+}
+.nav-right{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-right div{
+    margin-right: 5px;
+}
+.sign{
+    color: rgb(89, 89, 89);
+}
+
+.content{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
