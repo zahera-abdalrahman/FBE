@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+let wordArray = [];
+ for (let i = 1; i <= 4; i++)
+    {
+      let word = prompt(`Enter word ${i} :`);
+      wordArray.push(word); 
+    }
+function longerString(wordArray) {
+    let longerWord=wordArray[0];
+    for(let j = 0; j < 4; j++)
+    {
+        if(wordArray[j].length>longerWord.length)
+        longerWord=wordArray[j];
+    }
+    return longerWord;
+}
+
+alert(longerString(wordArray));
+
+
+let longerStringArrow=(wordArray) => {
+    let longerWord=wordArray[0];
+    for(let j = 0; j < 4; j++)
+    {
+        if(wordArray[j].length>longerWord.length)
+        longerWord=wordArray[j];
+    }
+    return longerWord;
+}
+alert(longerStringArrow(wordArray));
+    </script>
+</body>
+</html>

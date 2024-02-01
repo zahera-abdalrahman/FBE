@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background-color: #7F00FF;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 50%;
+    grid-template-rows: 1fr;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: white;
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 600px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: 2px 3px 24px 0px rgba(206,197,197,0.75) inset;
+}
+.container-form{
+    width: 60%;
+}
+
+h1,p,label{
+    color: #0047AB;
+}
+
+
+.btn{
+    display: block;
+    margin: 30px auto;
+    border-style: none;
+    background-color: skyblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+}
+form input[type="email"],input[type="password"]{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+} 
+#login-note{
+    text-align: center;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-form">
+        <form >
+            <h1>login</h1>
+            <label for="login-email">Email</label><br>
+            <input type="email" id="login-email"><br>
+    
+            <label for="password">Password</label><br>
+            <input type="password" id="login-password"><br>
+            <input type="button" value="Submit" id="login" class="btn">
+        </form>
+        <div id="loginNote"></div>
+    </div>
+    </div>
+
+    <script>
+        let submitLogIn=document.getElementById("login").addEventListener('click',()=>{
+            let loginEmail=document.getElementById("login-email").value;
+            let loginPassword=document.getElementById("login-password").value;
+            let loginNote=document.getElementById("loginNote");
+            let storedUser = JSON.parse(localStorage.getItem('user'));
+            if(storedUser.email === loginEmail && storedUser.password === loginPassword)
+            {
+                loginNote.innerHTML="Login Success!";
+                loginNote.style.color="green";
+            }
+            else
+            {
+                loginNote.innerHTML="Login Failed!";
+                loginNote.style.color="red";
+            }
+        });
+    </script>
+</body>
+</html>

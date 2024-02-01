@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select name="font-type" id="fontType">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+        </select>
+
+        <input type="number" name="font-size" id="fontSize" value="20">
+
+        <label>Italic</label><input type="checkbox" name="italic" id="italic">
+        <label>Bold</label><input type="checkbox" name="bold" id="bold">
+        <label>Underline</label><input type="checkbox" name="underline", id="underline">
+        
+    </div>
+    <textarea class="text" id="text" rows="10" cols="60">The quick brown fox jumps over the lazy dog</textarea>
+
+
+
+    <script>
+        let fontType=document.getElementById("fontType");
+        let fontSize=document.getElementById("fontSize");
+        let italic=document.getElementById("italic");
+        let bold=document.getElementById("bold");
+        let underline=document.getElementById("underline");
+
+        let text=document.getElementById("text");
+
+        fontType.addEventListener('change', function(){
+            text.style.fontFamily = fontType.value;
+        });
+
+        text.style.fontSize = fontSize.value + 'px';
+        fontSize.addEventListener('input', function () {
+            text.style.fontSize = Math.max(10, fontSize.value) + 'px';
+        });
+
+        italic.addEventListener('change', function(){
+            if(italic.checked){
+                text.style.fontStyle = 'italic';
+            }else{
+                text.style.fontStyle = 'normal';
+            }
+        });
+
+
+        bold.addEventListener('change', function(){
+            if(bold.checked){
+                text.style.fontWeight = 'bold';
+            }else{
+                text.style.fontWeight = 'normal';
+            }
+        });
+
+
+        underline.addEventListener('change', function(){
+            if(underline.checked){
+                text.style.textDecoration = 'underline';
+            }else{
+                text.style.textDecoration = 'none';
+            }
+        });
+
+
+    </script>
+</body>
+</html>

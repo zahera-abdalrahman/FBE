@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let firstName=prompt("firstName: ");
+let lastName=prompt("lastName: ");
+let string="";
+function fullName(firstName,lastName) {
+    string=`${firstName} ${lastName}`
+    return(string);
+}
+
+alert(fullName(firstName,lastName));
+
+
+let fullNameArrow=(firstName,lastName) => {
+    string=`${firstName} ${lastName}`
+    return(string);
+}
+
+alert(fullNameArrow(firstName,lastName));
+
+
+    </script>
+</body>
+</html>

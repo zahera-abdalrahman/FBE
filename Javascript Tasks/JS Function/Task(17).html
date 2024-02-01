@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let age=prompt("your age: ");
+function canIGetADrivingLicense(age) {
+    let remain=20-age;
+    if(age>20)
+    {
+        return "Yes, you can";
+    }
+    else
+    {
+        return `please come back after ${remain} years to get one`;
+    }
+}
+
+alert(canIGetADrivingLicense(age));
+
+
+
+let canIGetADrivingLicenseArrow=(age) => {
+    let remain=20-age;
+    if(age>20)
+    {
+        return "Yes, you can";
+    }
+    else
+    {
+        return `please come back after ${remain} years to get one`;
+    }
+}
+
+alert(canIGetADrivingLicenseArrow(age));
+    </script>
+</body>
+</html>

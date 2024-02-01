@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background-color: skyblue;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+    
+}
+
+.container{
+    background-color: white;
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 650px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 3px 24px 0px rgba(206,197,197,0.75) inset;
+}
+.container-form{
+    width: 60%;
+    margin-top: 20px;
+}
+
+h1,p,label{
+    color: #0047AB;
+}
+form .text-block{
+    margin: 10px 0;;
+    display: block;
+    border-style: none;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+}
+
+.btn{
+    display: block;
+    margin: 30px auto;
+    border-style: none;
+    background-color: skyblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+}
+
+form input[type="text"],input[type="number"],textarea{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#user{
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+<div>
+    <div class="container">
+        <div class="container-form">
+    <form id="myForm">
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="age">Age</label><br>
+        <input type="number" name="age" id="age">
+        <br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+
+        <label for="description">Description</label><br>
+        <textarea name="brief" id="description" cols="30" rows="10"></textarea>
+        <br>
+
+        <label for="university">University</label>
+        <input type="text" name="university" id="university">
+
+        <label for="Major">Major</label>
+        <input type="text" name="Major" id="Major">
+        <br>
+
+        <label for="java">
+            <input type="checkbox" id="java" name="options" class="programming" value="Java"> Java
+        </label>
+    
+        <label for="c++">
+            <input type="checkbox" id="c++" name="options" class="programming" value="C++"> C++
+        </label>
+    
+        <label for="c#">
+            <input type="checkbox" id="c#" name="options" class="programming" value="C#"> c#
+        </label>
+
+        <label for="Python">
+            <input type="checkbox" id="Python" name="options" class="programming" value="Python"> Python
+        </label>
+        <br>
+        <button type="submit" id="submit" class="btn">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+
+<script>
+    function enterInformation(event) {
+        event.preventDefault();
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let gender = document.querySelector('input[name="gender"]:checked').value;
+        let description = document.getElementById('description').value;
+        let university = document.getElementById('university').value;
+        let major = document.getElementById('Major').value;
+
+        var programmingLanguages = []; 
+        var checkboxes = document.querySelectorAll(".programming");
+        checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) { 
+                programmingLanguages.push(checkbox.value);
+            } 
+        });
+
+        let information = {
+            name: name,
+            age: age,
+            gender: gender,
+            description: description,
+            university: university,
+            major:major,
+            programming: programmingLanguages
+        };
+
+        window.localStorage.setItem('Information', JSON.stringify(information));
+
+        card(information);
+    }
+
+    function card(information) {
+        let info = document.createElement('div');
+        info.id = 'user';
+        info.innerHTML = `
+            <p>User Name: ${information.name}</p>
+            <p>Age: ${information.age}</p>
+            <p>gender: ${information.gender}</p>
+            <p>Description: ${information.description}</p>
+            <p>University: ${information.university}</p>
+            <p>Major: ${information.major}</p>
+            <p>Programming Languages: ${information.programming.join(',')}</p>
+        `;
+        document.body.appendChild(info);
+    }
+
+    let submit = document.getElementById('submit').addEventListener('click', enterInformation);
+    
+</script>
+</body>
+</html>

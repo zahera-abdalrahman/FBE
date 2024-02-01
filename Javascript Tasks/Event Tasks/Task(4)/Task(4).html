@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            max-width: 450px;
+            margin-bottom: 2rem;
+        }
+        .header-lorem{
+            display: flex;
+            justify-content: space-between;
+            padding:0 10px;
+            align-items: center;
+            background-color: #ececec;
+        }
+        button{
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        button:hover{
+            color: purple;
+        }
+        .body-lorem{
+            padding:0 10px;
+            display: none;
+        }
+        .body-lorem p{
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-lorem">
+            <h2>What is Lorem Ipsum?</h2>
+            <button class="show-btn">show</button>
+        </div>
+        <div class="body-lorem">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <div>
+                <button class="hide-btn">Hide</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="header-lorem">
+            <h2>Why do we use it?</h2>
+            <button class="show-btn">show</button>
+        </div>
+        <div class="body-lorem">
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            <div>
+                <button class="hide-btn">Hide</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-lorem">
+            <h2>Where does it come from?</h2>
+            <button class="show-btn">show</button>
+        </div>
+        <div class="body-lorem">
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, </p>
+            <div>
+                <button class="hide-btn">Hide</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        let show=document.querySelectorAll(".show-btn");
+        let hide=document.querySelectorAll(".hide-btn");
+        let bodyLorem=document.querySelectorAll(".body-lorem");
+
+        show.forEach(function (button, index) {
+            button.addEventListener('click', function () {
+            bodyLorem[index].style.display = "block";
+            });
+        });
+
+
+        hide.forEach(function (button, index) {
+            button.addEventListener('click', function () {
+            bodyLorem[index].style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+    background-color: skyblue;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+    
+}
+
+.container{
+    background-color: white;
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 600px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: 2px 3px 24px 0px rgba(206,197,197,0.75) inset;
+}
+.container-form{
+    width: 60%;
+}
+
+h1,p,label{
+    color: #0047AB;
+}
+form .text-block{
+    margin: 10px 0;;
+    display: block;
+    border-style: none;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+}
+
+.btn{
+    display: block;
+    margin: 30px auto;
+    border-style: none;
+    background-color: skyblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+}
+
+form input[type="text"],input[type="number"],textarea{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#project{
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-form">
+    <form>
+        <label for="Subject">Subject</label>
+        <input type="text" name="Subject" id="Subject">
+        <br>
+        <label for="UserTypes">User Types</label>
+        <input type="text" name="UserTypes" id="UserTypes">
+        <br>
+        <label for="Technology">Technology used</label>
+        <input type="text" name="Technology" id="Technology">
+        <br>
+        <label for="description">Description</label><br>
+        <textarea name="brief" id="description" cols="30" rows="10"></textarea>
+        <br>
+        <button type="submit" id="submit" class="btn">Submit</button>
+    </form>
+</div>
+</div>
+
+
+    <script>
+            function project(event) {
+            event.preventDefault();
+            const now = new Date();
+            const currentDateTime = now.toLocaleString();
+            let Subject = document.getElementById('Subject').value;
+            let UserTypes = document.getElementById('UserTypes').value;
+            let description = document.getElementById('description').value;
+            let Technology = document.getElementById('Technology').value;
+
+            let projectInfo = {
+                Subject: Subject,
+                UserTypes: UserTypes,
+                description: description,
+                Technology: Technology,
+                currentDateTime:currentDateTime
+            };
+            window.sessionStorage.setItem('projectInfo', JSON.stringify(projectInfo));
+            card(projectInfo);
+        }
+
+        function card(projectInfo) {
+            let info = document.createElement('div');
+            info.id = 'project';
+            info.innerHTML = `
+                <p>Subject: ${projectInfo.Subject}</p>
+                <p>UserTypes: ${projectInfo.UserTypes}</p>
+                <p>Technology: ${projectInfo.Technology}</p>
+                <p>Description: ${projectInfo.description}</p>
+                <p>Time: ${projectInfo.currentDateTime}</p>
+            `;
+            document.body.appendChild(info);
+        }
+
+        let submit = document.getElementById('submit').addEventListener('click', project);
+    </script>
+</body>
+</html>

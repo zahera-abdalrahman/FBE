@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let textOne,textTwo;
+textOne=prompt("First word: ");
+textTwo=prompt("Second word: ");
+function sameLength(textOne,textTwo) {
+    if(textOne.length === textTwo.length)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+alert(sameLength(textOne,textTwo));
+
+
+
+let sameLengthArrow=(textOne,textTwo) => {
+    if(textOne.length === textTwo.length)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+alert(sameLengthArrow(textOne,textTwo));
+    </script>
+</body>
+</html>

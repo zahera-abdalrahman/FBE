@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #yellow{
+            border: 1px solid black;
+            width: 300px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="yellow">
+        <p>Hello World!</p>
+    </div>
+
+
+
+    <script>
+        let yellow=document.getElementById("yellow");
+        yellow.addEventListener('mouseover',function(){
+            yellow.style.background="yellow";
+            document.getElementsByTagName("p")[0].style.fontWeight="bold"
+        });
+        yellow.addEventListener('mouseout',function(){
+            yellow.style.background="transparent";
+            document.getElementsByTagName("p")[0].style.fontWeight="300"
+        });
+    </script>
+</body>
+</html>

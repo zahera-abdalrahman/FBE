@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let age,amountPerDay;
+age=prompt("your age: ");
+amountPerDay=prompt("Amount PerDay:")
+function calculateSupply(age,amountPerDay) {
+    let total = (amountPerDay * 365) * (100 - age);
+    let string=`You will need ${total} cups of tea to last you until the ripe old age of 100`
+    console.log(string);
+    alert(string);
+}
+
+
+calculateSupply(age,amountPerDay);
+
+
+
+
+let calculateSupplyArrow=(age,amountPerDay) => {
+    let total = (amountPerDay * 365) * (100 - age);
+    let string=`You will need ${total} cups of tea to last you until the ripe old age of 100`
+    console.log(string);
+    alert(string);
+}
+
+
+calculateSupplyArrow(age,amountPerDay);
+    </script>
+</body>
+</html>

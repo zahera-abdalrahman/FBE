@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        #show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #22092C;
+            color: white;
+            height: 120px;
+            cursor: pointer;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            display: none;
+        }
+        thead tr{
+            height: 60px;
+        }
+        td, th {
+            border: 1px solid #22092C;
+            padding: 8px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="show">
+        <h1>Show Table</h1>
+    </div>
+
+    <table id="information">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="data-output">
+            
+        </tbody>
+    </table>
+
+    <script>
+
+        let show=document.getElementById("show").addEventListener('click',()=>{
+            let information=document.getElementById("information");
+            if (information.style.display === "none") {
+                information.style.display = "table";
+            } else {
+                information.style.display = "none";
+            }
+        });
+
+
+
+        fetch('./message.json')
+        .then(function(response){
+            return response.json();
+            
+        })
+        .then(data => {
+                let placeholder = document.querySelector("#data-output");
+                let out = "";
+
+                data.users.forEach(item => {
+                    out += `
+                    <tr>
+                        <td>${item.firstName} ${item.lastName}</td>
+                        <td>${item.phone}</td>
+                        <td>${item.email}</td>
+                    </tr>
+                    `;
+                });
+
+                placeholder.innerHTML = out;
+            });
+    </script>
+</body>
+</html>

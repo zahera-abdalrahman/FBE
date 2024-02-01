@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let score=prompt("your grade")
+function scoreInUniversity(score) {
+  switch (true) {
+    case score >= 95 && score <= 100:
+      return "A";
+    case score >= 85 && score <= 94:
+      return "B";
+    case score >= 70 && score <= 84:
+      return "C";
+    case score >= 50 && score <= 69:
+      return "D";
+    case score >= 0 && score <= 49:
+      return "F";
+    default:
+      return `Try Again`; 
+  }
+}
+
+console.log(scoreInUniversity(score));
+    </script>
+</body>
+</html>
